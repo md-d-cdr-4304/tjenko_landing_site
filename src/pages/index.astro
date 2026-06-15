@@ -1,0 +1,86 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import LiveEventPanel from '../components/LiveEventPanel.astro';
+import FeatureCards from '../components/FeatureCards.astro';
+import SignalSection from '../components/SignalSection.astro';
+import MetricsBand from '../components/MetricsBand.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+---
+
+<MainLayout>
+  <Header />
+  <main>
+    <Hero />
+    <LiveEventPanel />
+    <FeatureCards />
+    <SignalSection />
+    <MetricsBand />
+    <TrustStrip />
+    <FinalCTA />
+  </main>
+  <footer class="bg-black text-ivory border-t-[3px] border-black">
+    <div class="section-container py-10 md:py-14">
+      <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-8 md:gap-12">
+        
+        {/* Brand column */}
+        <div>
+          <span class="font-display text-2xl font-black tracking-tight uppercase">
+            TJENKO<sup class="text-[0.45em] font-mono tracking-normal align-super ml-0.5">TM</sup>
+          </span>
+          <p class="font-body text-sm text-ivory/50 mt-3 max-w-xs leading-relaxed">
+            The AI networking layer for live events. Orchestrating meaningful connections in real time.
+          </p>
+          <p class="font-mono text-xs text-ivory/30 mt-6">
+            &copy; {new Date().getFullYear()} Tjenko, Inc. All rights reserved.
+          </p>
+        </div>
+
+        {/* Product */}
+        <div>
+          <span class="label-mono text-ivory/40 block mb-4">Product</span>
+          <nav class="flex flex-col gap-2">
+            <a href="#product" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">Features</a>
+            <a href="#how-it-works" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">How It Works</a>
+            <a href="#" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">Pricing</a>
+            <a href="#" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">Integrations</a>
+          </nav>
+        </div>
+
+        {/* Developers */}
+        <div>
+          <span class="label-mono text-ivory/40 block mb-4">Developers</span>
+          <nav class="flex flex-col gap-2">
+            <a href="#" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">Documentation</a>
+            <a href="#" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">API Reference</a>
+            <a href="#" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">SDKs</a>
+            <a href="#" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">Changelog</a>
+          </nav>
+        </div>
+
+        {/* Company */}
+        <div>
+          <span class="label-mono text-ivory/40 block mb-4">Company</span>
+          <nav class="flex flex-col gap-2">
+            <a href="#" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">About</a>
+            <a href="#" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">Blog</a>
+            <a href="#" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">Careers</a>
+            <a href="#" class="font-mono text-xs text-ivory/60 hover:text-green transition-colors">Contact</a>
+          </nav>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div class="mt-10 pt-6 border-t-[2px] border-ivory/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div class="flex flex-wrap gap-6">
+          <a href="#" class="font-mono text-xs text-ivory/40 hover:text-ivory transition-colors">Privacy Policy</a>
+          <a href="#" class="font-mono text-xs text-ivory/40 hover:text-ivory transition-colors">Terms of Service</a>
+          <a href="#" class="font-mono text-xs text-ivory/40 hover:text-ivory transition-colors">Security</a>
+        </div>
+        <span class="font-mono text-xs text-ivory/20">SYS:ONLINE · v2.4.0</span>
+      </div>
+    </div>
+  </footer>
+</MainLayout>

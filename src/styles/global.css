@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ─── Tjenko Design System — Tailwind v4 Theme ──────────────── */
+@theme {
+  /* Colors */
+  --color-cornflower: #70A0FF;
+  --color-spectrum: #0052F5;
+  --color-ivory: #FFF8E7;
+  --color-black: #010400;
+  --color-green: #91CB3E;
+
+  /* Font families */
+  --font-display: "Arial Black", "Impact", "Inter Tight", "Helvetica Neue", sans-serif;
+  --font-body: "Inter", "system-ui", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", "Menlo", monospace;
+
+  /* Spacing scale */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-30: 7.5rem;
+
+  /* Shadows */
+  --shadow-brutal: 5px 5px 0px var(--color-black);
+  --shadow-brutal-sm: 3px 3px 0px var(--color-black);
+  --shadow-brutal-lg: 8px 8px 0px var(--color-black);
+  --shadow-brutal-hover: 2px 2px 0px var(--color-black);
+
+  /* Animation */
+  --animate-lift: lift 150ms ease-out forwards;
+}
+
+@keyframes lift {
+  to {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px var(--color-black);
+  }
+}
+
+/* ─── Base Styles ────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-ivory);
+    color: var(--color-black);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  /* Focus states */
+  :focus-visible {
+    outline: 3px solid var(--color-spectrum);
+    outline-offset: 2px;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: var(--color-spectrum);
+    color: var(--color-ivory);
+  }
+}
+
+/* ─── Utility Components ─────────────────────────────────────── */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider
+           bg-spectrum text-ivory border-[3px] border-black shadow-brutal
+           transition-all duration-150 cursor-pointer;
+  }
+  .btn-primary:hover {
+    @apply translate-x-[-2px] translate-y-[-2px] shadow-brutal-lg;
+  }
+  .btn-primary:active {
+    @apply translate-x-[2px] translate-y-[2px] shadow-brutal-hover;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider
+           bg-ivory text-black border-[3px] border-black shadow-brutal
+           transition-all duration-150 cursor-pointer;
+  }
+  .btn-secondary:hover {
+    @apply translate-x-[-2px] translate-y-[-2px] shadow-brutal-lg;
+  }
+  .btn-secondary:active {
+    @apply translate-x-[2px] translate-y-[2px] shadow-brutal-hover;
+  }
+
+  .btn-green {
+    @apply inline-flex items-center gap-2 px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider
+           bg-green text-black border-[3px] border-black shadow-brutal
+           transition-all duration-150 cursor-pointer;
+  }
+  .btn-green:hover {
+    @apply translate-x-[-2px] translate-y-[-2px] shadow-brutal-lg;
+  }
+  .btn-green:active {
+    @apply translate-x-[2px] translate-y-[2px] shadow-brutal-hover;
+  }
+
+  .panel {
+    @apply border-[3px] border-black bg-ivory shadow-brutal;
+  }
+
+  .panel-blue {
+    @apply border-[3px] border-black bg-cornflower shadow-brutal;
+  }
+
+  .panel-spectrum {
+    @apply border-[3px] border-black bg-spectrum text-ivory shadow-brutal;
+  }
+
+  .panel-green {
+    @apply border-[3px] border-black bg-green shadow-brutal;
+  }
+
+  .panel-hover {
+    @apply transition-all duration-150;
+  }
+  .panel-hover:hover {
+    @apply translate-x-[-2px] translate-y-[-2px] shadow-brutal-lg;
+  }
+
+  .label-mono {
+    @apply font-mono text-xs font-bold uppercase tracking-[0.15em];
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-5 md:px-8;
+  }
+}
