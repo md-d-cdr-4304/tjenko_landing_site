@@ -10,7 +10,7 @@
   --color-green: #91CB3E;
 
   /* Font families */
-  --font-display: "Inter", "system-ui", -apple-system, sans-serif;
+  --font-display: "Arial Black", "Impact", "Inter Tight", "Helvetica Neue", sans-serif;
   --font-body: "IBM Plex Mono", "SFMono-Regular", "Menlo", monospace;
   --font-mono: "IBM Plex Mono", "SFMono-Regular", "Menlo", monospace;
 
