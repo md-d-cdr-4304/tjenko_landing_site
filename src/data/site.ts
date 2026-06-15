@@ -64,9 +64,9 @@ export interface MatchEntry {
 }
 
 export const matchList: MatchEntry[] = [
-  { name: 'Morgan Lee', role: 'Head of Growth', company: 'Linear', score: 96 },
-  { name: 'Riley Chen', role: 'Product Designer', company: 'Figma', score: 92 },
-  { name: 'Casey Jordan', role: 'Engineer', company: 'Vercel', score: 89 },
+  { name: 'Karri Saarinen', role: 'Co-founder', company: 'Linear', score: 96 },
+  { name: 'Rasmus Andersson', role: 'Designer', company: 'Figma', score: 92 },
+  { name: 'Guillermo Rauch', role: 'Founder & CEO', company: 'Vercel', score: 89 },
 ];
 
 // ─── Live Event Stats ────────────────────────────────────────
