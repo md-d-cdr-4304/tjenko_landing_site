@@ -1,0 +1,77 @@
+---
+import { featureCards } from '../data/site';
+import type { FeatureCard } from '../data/site';
+
+// Inline SVG icons mapped by card title
+const cardIcons: Record<string, string> = {
+  'AI Matching': `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+    <line x1="10" y1="0" x2="10" y2="5" stroke="currentColor" stroke-width="2"/>
+    <line x1="10" y1="15" x2="10" y2="20" stroke="currentColor" stroke-width="2"/>
+    <line x1="0" y1="10" x2="5" y2="10" stroke="currentColor" stroke-width="2"/>
+    <line x1="15" y1="10" x2="20" y2="10" stroke="currentColor" stroke-width="2"/>
+  </svg>`,
+  'Smart Introductions': `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="1" y="3" width="14" height="10" stroke="currentColor" stroke-width="2" fill="none"/>
+    <polygon points="5,13 1,18 5,18" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+    <line x1="5" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="5" y1="10" x2="10" y2="10" stroke="currentColor" stroke-width="1.5"/>
+  </svg>`,
+  'Network Intelligence': `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="10" cy="4" r="2.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <circle cx="4" cy="16" r="2.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <circle cx="16" cy="16" r="2.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <line x1="10" y1="6.5" x2="5" y2="13.5" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="10" y1="6.5" x2="15" y2="13.5" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="6.5" y1="16" x2="13.5" y2="16" stroke="currentColor" stroke-width="1.5"/>
+  </svg>`,
+};
+---
+
+<section id="product" class="section-container py-12 md:py-16">
+  <span class="label-mono mb-6 block">CORE CAPABILITIES</span>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {featureCards.map((card: FeatureCard) => {
+      const isBlue = card.accent === 'blue';
+      const numberOpacity = isBlue ? 'text-black/20' : 'text-black/15';
+
+      return (
+        <div
+          class:list={[
+            isBlue ? 'panel-blue' : 'panel',
+            'panel-hover',
+            'p-6 md:p-8 relative overflow-hidden',
+          ]}
+        >
+          {/* Icon box — top right */}
+          <div
+            class:list={[
+              'absolute top-6 right-6 md:top-8 md:right-8',
+              'w-10 h-10 flex items-center justify-center',
+              'border-[2px] border-black',
+              isBlue ? 'bg-cornflower' : 'bg-ivory',
+            ]}
+          >
+            <span class="text-black" set:html={cardIcons[card.title] || ''} />
+          </div>
+
+          {/* Number watermark */}
+          <span class:list={['font-mono text-6xl font-bold leading-none select-none', numberOpacity]}>
+            {card.number}
+          </span>
+
+          {/* Title */}
+          <h3 class="font-display text-2xl mt-4 text-black">
+            {card.title}
+          </h3>
+
+          {/* Description */}
+          <p class="font-body text-sm mt-3 leading-relaxed text-black">
+            {card.description}
+          </p>
+        </div>
+      );
+    })}
+  </div>
+</section>

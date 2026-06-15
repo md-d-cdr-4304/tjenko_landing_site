@@ -1,0 +1,25 @@
+---
+import { metrics } from '../data/site';
+---
+
+<section class="bg-black text-ivory py-10 md:py-14">
+  <div class="section-container">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-0">
+      {metrics.map((metric, i) => (
+        <div
+          class:list={[
+            'px-4 md:px-6 py-3',
+            i < metrics.length - 1 && 'border-r-0 md:border-r-[2px] md:border-ivory/20',
+            /* On mobile 2-col grid: right column items get no left border, left items get right border */
+            i % 2 === 0 && i < metrics.length - 1 && 'border-r-[2px] border-ivory/20 md:border-r-[2px]',
+            /* If last item is odd (index is even in 0-based, meaning left col), span full width on mobile */
+            i === metrics.length - 1 && metrics.length % 2 !== 0 && 'col-span-2 md:col-span-1 text-center md:text-left',
+          ]}
+        >
+          <p class="font-display text-3xl md:text-4xl text-green">{metric.value}</p>
+          <p class="label-mono text-ivory/60 mt-1">{metric.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
