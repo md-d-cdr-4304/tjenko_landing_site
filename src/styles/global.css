@@ -11,7 +11,7 @@
 
   /* Font families */
   --font-display: "Arial Black", "Impact", "Inter Tight", "Helvetica Neue", sans-serif;
-  --font-body: "Inter", "system-ui", -apple-system, sans-serif;
+  --font-body: "IBM Plex Mono", "SFMono-Regular", "Menlo", monospace;
   --font-mono: "IBM Plex Mono", "SFMono-Regular", "Menlo", monospace;
 
   /* Spacing scale */
@@ -53,6 +53,7 @@
 
   body {
     font-family: var(--font-body);
+    font-weight: 500;
     background-color: var(--color-ivory);
     color: var(--color-black);
     line-height: 1.5;
