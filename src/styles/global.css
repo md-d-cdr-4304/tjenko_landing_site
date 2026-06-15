@@ -10,7 +10,7 @@
   --color-green: #91CB3E;
 
   /* Font families */
-  --font-display: "IBM Plex Mono", "SFMono-Regular", "Menlo", monospace;
+  --font-display: "Inter", "system-ui", -apple-system, sans-serif;
   --font-body: "IBM Plex Mono", "SFMono-Regular", "Menlo", monospace;
   --font-mono: "IBM Plex Mono", "SFMono-Regular", "Menlo", monospace;
 
